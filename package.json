@@ -1,0 +1,30 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "A personal notes application with Node.js backend and vanilla frontend",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd backend && npm start",
+    "frontend": "node frontend-server.js",
+    "frontend-python": "cd frontend && python3 -m http.server 8000",
+    "dev": "concurrently \"npm run backend:dev\" \"npm run frontend\"",
+    "backend:dev": "cd backend && npm run dev",
+    "install-all": "npm install && cd backend && npm install",
+    "setup": "npm run install-all"
+  },
+  "keywords": [
+    "notes",
+    "nodejs",
+    "express",
+    "mysql"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Notes App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Animated Background Shapes -->
+    <div class="bg-shapes">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h2><i class="fas fa-user-circle"></i> My Profile</h2>
+            <div class="header-actions">
+                <a href="dashboard.html" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Back to Notes
+                </a>
+                <button id="logoutBtn" class="btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </header>
+
+        <!-- Profile Information Section -->
+        <div class="profile-section">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="profile-info">
+                        <h3 id="profileUsername">Loading...</h3>
+                        <p id="profileEmail">Loading...</p>
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <i class="fas fa-sticky-note"></i>
+                                <span id="notesCount">0</span> Notes
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-calendar"></i>
+                                <span id="memberSince">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Management Tabs -->
+        <div class="profile-tabs">
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-tab="edit-profile">
+                    <i class="fas fa-edit"></i> Edit Profile
+                </button>
+                <button class="tab-btn" data-tab="change-password">
+                    <i class="fas fa-lock"></i> Change Password
+                </button>
+                <button class="tab-btn danger" data-tab="delete-account">
+                    <i class="fas fa-trash"></i> Delete Account
+                </button>
+            </div>
+
+            <!-- Edit Profile Tab -->
+            <div class="tab-content active" id="edit-profile">
+                <form id="editProfileForm" class="profile-form">
+                    <h4><i class="fas fa-user-edit"></i> Update Profile Information</h4>
+                    
+                    <div class="form-group">
+                        <label for="editUsername">Username</label>
+                        <input type="text" id="editUsername" name="username" required
+                               placeholder="Enter your username">
+                        <span class="form-error" id="usernameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="editEmail">Email Address</label>
+                        <input type="email" id="editEmail" name="email" required
+                               placeholder="Enter your email">
+                        <span class="form-error" id="emailError"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save Changes
+                    </button>
+                </form>
+            </div>
+
+            <!-- Change Password Tab -->
+            <div class="tab-content" id="change-password">
+                <form id="changePasswordForm" class="profile-form">
+                    <h4><i class="fas fa-key"></i> Change Password</h4>
+                    
+                    <div class="form-group">
+                        <label for="currentPassword">Current Password</label>
+                        <div class="password-input-wrapper">
+                            <input type="password" id="currentPassword" name="currentPassword" required
+                                   placeholder="Enter current password">
+                            <i class="fas fa-eye password-toggle" data-target="currentPassword"></i>
+                        </div>
+                        <span class="form-error" id="currentPasswordError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="newPassword">New Password</label>
+                        <div class="password-input-wrapper">
+                            <input type="password" id="newPassword" name="newPassword" required
+                                   placeholder="Enter new password">
+                            <i class="fas fa-eye password-toggle" data-target="newPassword"></i>
+                        </div>
+                        <span class="form-error" id="newPasswordError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm New Password</label>
+                        <div class="password-input-wrapper">
+                            <input type="password" id="confirmPassword" name="confirmPassword" required
+                                   placeholder="Confirm new password">
+                            <i class="fas fa-eye password-toggle" data-target="confirmPassword"></i>
+                        </div>
+                        <span class="form-error" id="confirmPasswordError"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-lock"></i> Change Password
+                    </button>
+                </form>
+            </div>
+
+            <!-- Delete Account Tab -->
+            <div class="tab-content" id="delete-account">
+                <div class="danger-zone">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Danger Zone</h4>
+                    <p class="warning-text">
+                        <strong>Warning:</strong> Deleting your account is permanent and cannot be undone. 
+                        All your notes will be permanently deleted.
+                    </p>
+                    
+                    <form id="deleteAccountForm" class="profile-form">
+                        <div class="form-group">
+                            <label for="deletePassword">Enter your password to confirm</label>
+                            <div class="password-input-wrapper">
+                                <input type="password" id="deletePassword" name="password" required
+                                       placeholder="Enter your password">
+                                <i class="fas fa-eye password-toggle" data-target="deletePassword"></i>
+                            </div>
+                            <span class="form-error" id="deletePasswordError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="confirmDelete" required>
+                                <span>I understand that this action cannot be undone</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fas fa-trash"></i> Delete My Account
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>
