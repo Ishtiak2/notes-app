@@ -1,15 +1,47 @@
-# 📝 Notes App
+# 📝 Modern Notes App
 
-A modern, secure personal notes application built with Node.js, Express, MySQL, and vanilla JavaScript.
+A full-featured, secure personal notes application with modern UI and comprehensive functionality.
 
 ## ✨ Features
 
-- 🔐 **User Authentication** - Secure registration and login
-- 📝 **CRUD Operations** - Create, read, update, and delete notes
-- 🎨 **Modern UI** - Glassmorphic design with smooth animations
-- 📱 **Responsive** - Works perfectly on desktop and mobile
-- 🔍 **Form Validation** - Client-side and server-side validation
-- 🌐 **RESTful API** - Clean backend architecture
+### 🔐 **Authentication & Security**
+- Secure user registration and login with JWT tokens
+- Password hashing with bcrypt
+- Protected routes and middleware
+- Session management
+
+### 📝 **Notes Management**
+- Create, read, update, and delete notes
+- Rich text editing with title and content
+- Real-time CRUD operations
+- Note persistence with MySQL database
+
+### 🔍 **Advanced Search**
+- Real-time search functionality
+- Instant results with debouncing
+- Search highlighting in results
+- Search statistics display
+
+### 👤 **User Profile Management**
+- View and edit profile information
+- Change password with verification
+- Account deletion with confirmation
+- User statistics (notes count, member since)
+
+### 🎨 **Modern UI/UX**
+- Glassmorphic design with smooth animations
+- Responsive layout for all devices
+- Interactive form elements with validation
+- Password visibility toggles
+- Smooth transitions and hover effects
+- Font Awesome icons integration
+
+### �️ **Technical Features**
+- RESTful API architecture
+- CORS enabled for cross-origin requests
+- Comprehensive error handling
+- Input validation (client-side and server-side)
+- Clean, modular code structure
 
 ## 🚀 Quick Start
 
