@@ -1,4 +1,9 @@
 // Profile page functionality
+// API URL configuration
+const API_URL = window.location.hostname === 'localhost' 
+    ? 'http://localhost:3000'
+    : (window.BACKEND_URL || 'https://your-backend-url.railway.app'); // Will be replaced during deployment
+
 class ProfileManager {
     constructor() {
         this.init();

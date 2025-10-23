@@ -149,7 +149,33 @@ npm run dev  # Uses nodemon for auto-reload
 ### Frontend Development
 The frontend uses vanilla JavaScript and automatically reloads when you make changes.
 
-## 🐛 Troubleshooting
+## � Deployment
+
+### Deploy to Production (Free!)
+
+This app is ready to deploy using free hosting services:
+
+**Recommended Stack:**
+- **Backend + Database**: [Railway.app](https://railway.app) (Free $5/month credit)
+- **Frontend**: [Vercel](https://vercel.com) or [Netlify](https://netlify.com) (Free unlimited)
+
+📘 **[Complete Deployment Guide](./DEPLOYMENT.md)** - Step-by-step instructions for:
+- Railway (Backend) + Vercel (Frontend) ⭐ Recommended
+- Render.com (Full-stack alternative)
+- Netlify (Frontend alternative)
+- Environment variable setup
+- Database configuration
+- Troubleshooting tips
+
+**Quick Deploy:**
+1. Push code to GitHub
+2. Connect Railway to your repo → Deploy backend
+3. Add MySQL database in Railway
+4. Connect Vercel to your repo → Deploy frontend
+5. Update environment variables
+6. You're live! 🎉
+
+## �🐛 Troubleshooting
 
 ### Port Already in Use
 ```bash

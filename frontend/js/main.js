@@ -1,5 +1,8 @@
 // Constants
-const API_URL = 'http://localhost:3000';
+// Automatically detect API URL based on environment
+const API_URL = window.location.hostname === 'localhost' 
+    ? 'http://localhost:3000'
+    : (window.BACKEND_URL || 'https://your-backend-url.railway.app'); // Will be replaced during deployment
 
 // DOM Elements
 const loginForm = document.getElementById('loginForm');
