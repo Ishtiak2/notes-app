@@ -2,7 +2,7 @@
 // API URL configuration
 const API_URL = window.location.hostname === 'localhost' 
     ? 'http://localhost:3000'
-    : (window.BACKEND_URL || 'https://your-backend-url.railway.app'); // Will be replaced during deployment
+    : 'https://notes-app-production-fcf0.up.railway.app';
 
 class ProfileManager {
     constructor() {
