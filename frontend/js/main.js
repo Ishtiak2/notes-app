@@ -1,8 +1,5 @@
 // Constants
-// Automatically detect API URL based on environment
-const API_URL = window.location.hostname === 'localhost' 
-    ? 'http://localhost:3000'
-    : 'https://notes-app-production-fcf0.up.railway.app';
+const API_URL = 'http://localhost:3000';
 
 // DOM Elements
 const loginForm = document.getElementById('loginForm');

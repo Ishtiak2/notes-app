@@ -1,9 +1,4 @@
 // Profile page functionality
-// API URL configuration
-const API_URL = window.location.hostname === 'localhost' 
-    ? 'http://localhost:3000'
-    : 'https://notes-app-production-fcf0.up.railway.app';
-
 class ProfileManager {
     constructor() {
         this.init();
