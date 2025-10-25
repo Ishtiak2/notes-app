@@ -4,15 +4,27 @@ require('dotenv').config();
 
 const app = express();
 
-// CORS Configuration for production
-const corsOptions = {
-    origin: process.env.FRONTEND_URL || 'http://localhost:8000',
-    credentials: true,
-    optionsSuccessStatus: 200
-};
+// CORS Configuration for Production
+const allowedOrigins = [
+    process.env.FRONTEND_URL,
+    'http://localhost:8000', // Local development
+    'http://localhost:3000'  // Local development
+].filter(Boolean); // Remove undefined values
 
-// Middleware
-app.use(cors(corsOptions));
+app.use(cors({
+    origin: function(origin, callback) {
+        // Allow requests with no origin (like mobile apps or curl)
+        if (!origin) return callback(null, true);
+        
+        if (allowedOrigins.indexOf(origin) !== -1 || process.env.NODE_ENV !== 'production') {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    credentials: true
+}));
+
 app.use(express.json());
 
 // Routes
